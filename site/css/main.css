@@ -211,6 +211,21 @@ to {
 	-webkit-box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
 	box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
 }
+.btn-home {
+	background-color: #2ecc71;
+	background-image:none;
+	border: 0;
+	-webkit-box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
+	box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
+	line-height: 1.8;
+}
+.btn-home:hover, .btn-success:focus, .btn-success:active {
+	background-color: #29c36a;
+	color:#FFF;
+	border: 0;
+	-webkit-box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
+	box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
+}
 .btn-primary {
 	background-color: #2db6d8;
 	background-image:none;
@@ -551,4 +566,8 @@ padding: 40px 15px;
 	background-attachment: scroll;
 }
 
+}
+
+#membersincedate {
+font-style: italic;
 }

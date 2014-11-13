@@ -39,10 +39,13 @@
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
 	            <li class="active"><a href="#top" class="smothscroll">Home</a></li>
-	            <li><a href="#simplesecurefun" class="smothScroll">Simple, Secure & Fun</a></li>
-	            <li><a href="#makemoney" class="smothscroll">Make Money</a></li>
+	            <li><a href="#accountoverview" class="smothScroll">Account Overview</a></li>
+	            <li><a href="#friends" class="smothscroll">Friends</a></li>
 	            <li><a href="#exclusiveoffers" class="smothScroll">Exclusive Offers</a></li>
-	            <li><a href="sign_in.html" class="smothScroll"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
+	            <li><a href="#accountstatement" class="smothScroll">Account Statement</a></li>
+	          </ul>
+	    	  <ul class="nav navbar-nav navbar-right">
+	          	<li><form action="index.html"><button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-user"></span> Log Out</button></form></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -80,11 +83,11 @@
  
 
     <! -- ******************** FEATURES SECTION ******************** -->	
-	<div class="container" id="explore">
+	<div class="container" id="accountoverview">
  
 		<div class="section-title">
-			<h2>Showcase your product with style.</h2>
-			<h4>This theme is ideal for your Web Project or your App.</h4>
+			<h2>Account Overview</h2>
+			<h4 id="membersincedate"></h4>
 		</div>
 
 		<section class="row heroimg breath">
@@ -292,7 +295,12 @@
      event.preventDefault();
       });
   });
-        
+  
+  $(document).ready( function()
+  {
+    $('#membersincedate').text("Member since 13 November 2014");
+    
+    });      
 
 </script>
  
