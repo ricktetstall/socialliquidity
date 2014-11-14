@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
+ 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Copyright Social Liquidity 2014">
-	<title>Social Liquidity - be WONGA for Banks</title>
+	<title>Social Liquidity - WONGA for Banks</title>
 	 
 	<link href="css/bootstrap.css" rel="stylesheet">
 	 
@@ -58,39 +59,21 @@
 			<div class="logo"> <a href="index.html#"><img src="images/logo.png" alt="logo"></a>
 			</div>
 			
-			<form action="borrow.html">
 			
-			<table class='center'>
-			<tr>
-			<td>
-			<h4>How much capital<br/>do you want?</h1>
-			</td>
-			<td>
-				<div id="value" style="width:400px; margin:15px;"></div>
-			</td>
-			<td>
-			<input class="form-control input-lg" name="valuebox" type="text" id="valuebox" required="required" readonly="true">
-			</td>
-			</tr>
-			<tr>
-			<td>
-			<h4>How long do you<br/>want it for?</h1>
-			</td>
-			<td>
-				<div id="duration" style="width:400px; margin:15px;"></div>
-			</td>
-			<td>
-			<input class="form-control input-lg" name="durationbox" type="text" id="durationbox" required="required" readonly="true">
-			</td>
-			</tr>
-			</table>	
+			<div style="width:250px; margin:0 auto;" >
+				<form role="form" action="magiwebsite@gmail.com" method="post" enctype="plain"> 
+				  <div class="form-group">
+				    <label for="name1">Username</label>
+				    <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
+				  </div>
+				  <div class="form-group">
+				    <label for="email1">Password</label>
+				    <input type="password" name="Mail" class="form-control" id="email1" placeholder="Enter email">
+				  </div>
+				  <br>
+				  <button type="submit" class="btn btn-lg btn-success"><span class='glyphicon glyphicon-user'></span>  Login</button>
+				</form>
 			</div>
-			<h4>We can lend to you at <span id="ratespan"></span>%</h4>
-			<br />
-			<button type="submit" class="btn btn-blue btn-lg" style="">Get Tier 1 Capital Now</button>
-			
-			</form>
-			
 			
  
 		</div><! --/container -->
@@ -136,7 +119,6 @@
 	$( "#value" ).slider({
       orientation: "horizontal",
       range: "min",
-      step: 50000,
       min: 500000,
       max: 1000000000,
       value: initValue,
