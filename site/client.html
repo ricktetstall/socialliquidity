@@ -64,7 +64,7 @@
 			<table class='center'>
 			<tr>
 			<td>
-			<h4>How much would<br/>you like to borrow?</h1>
+			<h4>How much capital<br/>do you want?</h1>
 			</td>
 			<td>
 				<div id="value" style="width:400px; margin:15px;"></div>
@@ -75,7 +75,7 @@
 			</tr>
 			<tr>
 			<td>
-			<h4>For how long would<br/>you like to borrow?</h1>
+			<h4>How long do you<br/>want it for?</h1>
 			</td>
 			<td>
 				<div id="duration" style="width:400px; margin:15px;"></div>
@@ -137,6 +137,7 @@
 	$( "#value" ).slider({
       orientation: "horizontal",
       range: "min",
+      step: 50000,
       min: 500000,
       max: 1000000000,
       value: initValue,
