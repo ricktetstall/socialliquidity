@@ -11,6 +11,11 @@
 
 @charset "utf-8";
 
+@font-face {
+     font-family: Vincent;
+     src: url('../fonts/Vincent-Regular.otf'); 
+}
+
 body{
 	font-family:'Open Sans',Arial,sans-serif;
 	background:#FFF;
@@ -617,3 +622,5 @@ padding-left: 10em;
 float: left;
 border-color:2px solid red;
 }
+
+
