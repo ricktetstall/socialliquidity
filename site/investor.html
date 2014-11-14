@@ -151,7 +151,6 @@
  
  
 <script>
-
 var unitCosts = {
 				gbp: 25,
 				usd: 40
@@ -163,7 +162,6 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
  $(function() {
     $('.scrollto, .gototop').bind('click',function(event){
 		 var $anchor = $(this);
@@ -181,7 +179,6 @@ function getParameterByName(name) {
     
     var unitsOwned = 500;
     unitsOwned = data;
-
     balance = unitCosts.usd*unitsOwned;
     
     $('#units').text(unitsOwned);
@@ -222,8 +219,6 @@ function getParameterByName(name) {
           }
   });
   
-
-
   $('#buylink').click(function(){
       $('#buydialog').dialog('open');
   });
@@ -243,11 +238,9 @@ function getParameterByName(name) {
         $('.transactions').after(newrow);
           }
   });
-
   $('#selllink').click(function(){
       $('#selldialog').dialog('open');
   });
-
   }); 
 </script>
  
