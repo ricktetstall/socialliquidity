@@ -506,7 +506,66 @@ transform:scale(1.05);
 z-index:2;
 }
 
+/*========== 6. Splash How It Works==============*/
 
+.pricingsplash {
+	padding:25px;
+	color:#FFF;
+	text-align:center;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+.pricingsplash .plannamesplash {
+	text-transform:uppercase;
+	font-weight:600;
+}
+.pricingsplash .pricesplash {
+	font-size:52px;
+	font-weight:300;
+	margin:10px 0;
+}
+.pricingsplash .billingsplash {
+	text-transform:uppercase;
+	color:#FFF;
+	opacity:0.7;
+}
+.pricingsplash .pricesplash .currsplash {
+	display:inline-block;
+	font-size:20px;
+	vertical-align:super;
+}
+.pricingsplash .pricesplash .persplash {
+	display:inline-block;
+	font-size:20px;
+	vertical-align: baseline;
+}
+.color1 {
+	background-color:#2ecc71;
+}
+.color2 {
+	background-color:#1abc9c;
+}
+.color3 {
+	background-color:#16a085;
+}
+/* Animation */
+
+.pricingsplash {
+	-moz-transition:all 0.6s ease;
+	-webkit-transition:all 0.6s ease;
+	-ms-transition:all 0.6s ease;
+	-o-transition:all 0.6s ease;
+	transition:all 0.6s ease;
+}
+.pricingsplash:hover {
+	-moz-transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+	-o-transform:scale(1.05);
+	-ms-transform:scale(1.05);
+	transform:scale(1.05);
+	z-index:2;
+}
 /*========== 7. FAQ ==============*/
 
 .faq p {
