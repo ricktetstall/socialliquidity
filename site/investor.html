@@ -40,8 +40,7 @@
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#top" class="smothscroll">Home</a></li>
-	            <li><a href="#accountoverview" class="smothScroll">Account Overview</a></li>
+	            <li class="active"><a href="#accountoverview" class="smothScroll">Account Overview</a></li>
 	            <li><a href="friends.html" class="smothscroll">Friends</a></li>
 	            <li><a href="#exclusiveoffers" class="smothScroll">Exclusive Offers</a></li>
 	            <li><a href="#accountstatement" class="smothScroll">Account Statement</a></li>
@@ -91,9 +90,11 @@
 
 				
 				<div class="col-md-8">
-					<div class="pricing color2">
+					<div id="transactionlist" class="pricing color2">
 						<div class="transactions"><span class="glyphicon glyphicon-tint"></span>Transactions</div>
-						<div class="price"><span class="date"> 09 Nov 2014 
+                            
+
+						    <div class="price"><span class="date"> 09 Nov 2014 
 							<span id="transtype"> Payment </span>
 							<span class="curr">$</span>2000</div>
 
@@ -132,13 +133,22 @@
 </div>
 
 
+	    <! -- ******************** FOOTER ******************** -->	  
+ 
+		<div class="container">
+			<section class="row breath">
+				<div class="col-md-12 footerlinks">
+					<p>&copy; 2014 Social Liquidity. All Rights Reserved</p>
+				</div>
+			</section><! --/section -->
+		</div><! --/container -->
 	
-<div id="buydialog">
+<div id="buydialog" style="display:none;">
     <iframe id="buyiframe" src="" class="transactionframe"></iframe>
 </div>
 
 
-<div id="selldialog">
+<div id="selldialog" style="display:none;">
     <iframe id="selliframe" src="" class="transactionframe"></iframe>
 </div>
  
@@ -153,7 +163,6 @@
  
  
 <script>
-
 var unitCosts = {
 				gbp: 25,
 				usd: 40
@@ -165,7 +174,6 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
  $(function() {
     $('.scrollto, .gototop').bind('click',function(event){
 		 var $anchor = $(this);
@@ -184,7 +192,6 @@ function getParameterByName(name) {
     
     var unitsOwned = 500;
     unitsOwned = data;
-
     balance = unitCosts.usd*unitsOwned;
     
     $('#units').text(unitsOwned);
@@ -196,12 +203,14 @@ function getParameterByName(name) {
   
   $(document).ready( function()
   {
-    userid = getParameterByName('userId');
+    userid = getParameterByName('userid');
     
     if (!userid)
     {
     	userid = 9;
     }
+    
+    userhashref = '#' + userid;
     
     updateUnitsOwnedAndBalance(userid);
     
@@ -213,10 +222,16 @@ function getParameterByName(name) {
     height: 600,
     width: 400,
     open: function(ev, ui){
-             $('#buyiframe').attr('src','buy_micro.html');
+             $('#buyiframe').attr('src','buy_micro.html' + userhashref);
+          },
+    close: function(ev, ui){
+        updateUnitsOwnedAndBalance(userid);
+        transactionvalue = $('#buyiframe').contents().find("#unitsBought").text() * unitCosts.usd;
+        newrow = '<div class="price" class="newrow"><span class="date"> 14 Nov 2014 <span id="transtype"> Payment </span><span class="curr">$</span>' + transactionvalue + '</div>';
+        $('.transactions').after(newrow);
           }
   });
-
+  
   $('#buylink').click(function(){
       $('#buydialog').dialog('open');
   });
@@ -225,15 +240,21 @@ function getParameterByName(name) {
     autoOpen: false,
     modal: true,
     height: 600,
-
+    width: 400,
     open: function(ev, ui){
-             $('#selliframe').attr('src','sell_micro.html');
+             $('#selliframe').attr('src','sell_micro.html' + userhashref);
+          },
+	close: function(ev, ui){
+        updateUnitsOwnedAndBalance(userid);
+        transactionvalue = $('#selliframe').contents().find("#unitsSold").text() * unitCosts.usd;
+        newrow = '<div class="price" class="newrow"><span class="date"> 14 Nov 2014 <span id="transtype"> Payment </span><span class="curr">$</span>' + transactionvalue + '</div>';
+        $('.transactions').after(newrow);
           }
   });
-
   $('#selllink').click(function(){
       $('#selldialog').dialog('open');
   });
+
 
   $('#lent').on('click', function(){
   	$('#accountoverview').fadeOut();
@@ -268,6 +289,7 @@ function getParameterByName(name) {
 var ctx = document.getElementById("myChart").getContext("2d");
   var myDoughnutChart = new Chart(ctx).Doughnut(data);
 }
+
 
 
   }); 
