@@ -690,5 +690,10 @@ h1.pageHeading
 .transactionframe
 {
 height:500px;
-width:300px;
+width:350px;
+border:none;
+margin-left:auto;
+margin-right:auto;
 }
+
+
