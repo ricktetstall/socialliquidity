@@ -697,4 +697,13 @@ h1.pageHeading
 height:500px;
 width:300px;
 }
+#myChart{
+position: absolute;
+right: 400px;
 
+}
+
+#backtoinvestor{
+
+	padding-left: 10em;
+}

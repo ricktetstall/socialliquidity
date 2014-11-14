@@ -45,6 +45,7 @@
 	            <li><a href="friends.html" class="smothscroll">Friends</a></li>
 	            <li><a href="#exclusiveoffers" class="smothScroll">Exclusive Offers</a></li>
 	            <li><a href="#accountstatement" class="smothScroll">Account Statement</a></li>
+	            <li id="lent"><a href="#chart"> Over $1 billion lent to banks !</a></li>
 	          </ul>
 	    	  <ul class="nav navbar-nav navbar-right">
 	          	<li><form action="index.html"><button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-user"></span> Log Out</button></form></li>
@@ -117,8 +118,18 @@
 				<!-- 	</div> --><! --/pricing -->
 			<!-- 	</div> --><! --/col-md-4-->
 			</section><!-- /section planpricing -->
+		</div>
 
+<!-- <div id="chart"> -->
+	<div class="container" id="chart">
+ 	
+			<div class="section-title">
+				<h2><span class="glyphicon glyphicon-tint"></span>Lending Distribution</h2>
+					<h3>Total Lent: $1 100 000 000 ! <span><a id="backtoinvestor" href="investor.html"> Back to Account overview </a></span></h3>
+			</div>
 
+	<canvas id="myChart" width="400" height="400"></canvas>
+</div>
 
 
 	
@@ -138,6 +149,7 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/easing.js"></script>
 <script src="js/nicescroll.js"></script>
+<script src="js/Chart.js"></script>
  
  
 <script>
@@ -166,6 +178,7 @@ function getParameterByName(name) {
   
   function updateUnitsOwnedAndBalance(userid)
   {
+  	$('#chart').hide();
     
     $.getJSON("http://socialliquidity.azurewebsites.net/GetNumUnits?userId=" + userid, function(data){
     
@@ -221,6 +234,41 @@ function getParameterByName(name) {
   $('#selllink').click(function(){
       $('#selldialog').dialog('open');
   });
+
+  $('#lent').on('click', function(){
+  	$('#accountoverview').fadeOut();
+  	showChart();
+  });
+
+  var showChart = function(){
+
+  	$('#chart').fadeIn(1000);
+
+  
+  var data = [
+    {
+        value: 30,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "RBS"
+    },
+    {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "NatWest"
+    },
+    {
+        value: 20,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Bank of England"
+    }
+]
+var ctx = document.getElementById("myChart").getContext("2d");
+  var myDoughnutChart = new Chart(ctx).Doughnut(data);
+}
+
 
   }); 
 </script>
