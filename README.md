@@ -4,7 +4,9 @@ socialliquidity
 Wonga for Banks 
 
 Url for buy page: /buy.html#1
+
 Url for sell page: /sell.html#1
+
 The #1 shows the user id. To show the buy or sell page for user 2, use /buy.html#2
 
 Examples for using the API:
