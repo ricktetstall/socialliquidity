@@ -317,7 +317,7 @@ to {
 
 .section-title {
 	text-align:center;
-	margin-top:60px;
+	margin-top:50px;
 	margin-bottom:30px;
 }
 .section-title h2 {
@@ -428,7 +428,7 @@ to {
 .pricing {
 	padding:25px;
 	color:#FFF;
-	text-align:center;
+	text-align:left;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
@@ -437,15 +437,33 @@ to {
 	text-transform:uppercase;
 	font-weight:600;
 }
+
+.pricing .transactions {
+	text-transform:uppercase;
+	font-weight:600;
+	text-align: left;
+	line-height: .5em
+}
+
+
 .pricing .price {
 	font-size:52px;
 	font-weight:300;
-	margin:10px 0;
+	margin:5px 0;
 }
 .pricing .billing {
 	text-transform:uppercase;
 	color:#FFF;
 	opacity:0.7;
+
+}
+
+.pricing .billing2 {
+	text-transform:uppercase;
+	color:#FFF;
+	opacity:0.7;
+	padding-left: 30em;
+	
 }
 .pricing .price .curr {
 	display:inline-block;
@@ -571,3 +589,34 @@ padding: 40px 15px;
 #membersincedate {
 font-style: italic;
 }
+
+div.glyphicon-tint {
+    font-size: 2em;
+}
+
+#buymore{
+	float: left;
+	border-right-color: 1px solid red;
+}
+#sellunits{
+	float: right;
+}
+
+.pricing .date{
+ font-size: .5em;
+ text-align: left;
+}
+
+#transtype{
+
+font-size: .75em;
+padding-right: 15em;
+}
+
+#invested{
+	padding-left: 10em;
+	float: left;
+	border-color:2px solid red;
+}
+
+

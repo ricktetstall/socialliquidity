@@ -83,33 +83,96 @@
  
 
     <! -- ******************** FEATURES SECTION ******************** -->	
+		<div class="container" id="accountoverview">
+ 
+			<div class="section-title">
+				<h2>Account Overview</h2>
+				<h4 id="membersincedate"></h4>
+
+				<h4>Amount Invested to date 	: <span class="curr">$</span> 4000 </h4>
+				<h4>Amount Withdrawn to date	: <span class="curr">$</span> 200 </h4>	
+			</div>
+			<section class="row breath planpricing">
+			
+				
+
+					<div class="col-md-4">
+					<div class="pricing color1">
+						<div class="planname">Account Summary</div>
+						<div class="price"> <span class="curr">$</span>3800<span class="per"></span></div>
+						<div class="billing">Units: 500</div>
+						<div id= "buymore"> <a href="#">Buy more units<a></div>
+							<div id="sellunits"><a href="#">Sell units</a></div>
+					</div><! --/pricing -->
+				</div><! --/col-md-4-->
+
+				
+
+				
+				<div class="col-md-8">
+					<div class="pricing color2">
+						<div class="transactions">Transactions</div>
+						<div class="price"><span class="date"> 09 Nov 2014 
+							<span id="transtype"> Payment </span>
+							<span class="curr">$</span>2000</div>
+
+							<div class="price"><span class="date"> 25 Oct 2014 
+							<span id="transtype"> Withdrawl </span>
+							<span class="curr">$</span>200</div>
+
+							<div class="price"><span class="date"> 09 Sep 2014 
+							<span id="transtype"> Payment </span>
+							<span class="curr">$</span>2000</div>
+				
+						<div class="billing"><a href="#">More Transactions</a><span class="billing2"><a href="#"> Unit Summary<a></span></div>
+				
+					</div><! --/pricing -->
+				</div><! --/col-md-4-->
+				
+		<!-- 		<div class="col-md-4">
+					<div class="pricing color3">
+						<div class="planname">Enterprise</div>
+						<div class="price"> <span class="curr">$</span>99<span class="per">/MO</span></div>
+						<div class="billing">Billed Annually</div> -->
+				<!-- 	</div> --><! --/pricing -->
+			<!-- 	</div> --><! --/col-md-4-->
+			</section><!-- /section planpricing -->
+
+
+
+
 	<div class="container" id="accountoverview">
  
 		<div class="section-title">
 			<h2>Account Overview</h2>
 			<h4 id="membersincedate"></h4>
 		</div>
+	
 
-		<section class="row heroimg breath">
+		<!-- <section class="row heroimg breath">
 			<div class="col-md-12 text-center"> 
-				<img src="images/flat-mockup-template.png" alt="flat-mockup-template">
+
+			 Simple Liquidity Balance</h2>
 			</div>
-		</section><! --/section -->
+		</section><! /section -->
  
-		<div class="section-title">
+	<!-- 	<div class="section-title">
 			<h2>More information about your product.</h2>
 			<h4>Always detail some important features.</h4>
-		</div>
+		</div> -->
 		
-		<section class="row features">
+		<section class="row breath planpricing">
 			<div class="col-sm-6 col-md-3">
-				<div class="thumbnail"> 
-					<img src="images/service_01.png" alt="analytics-icon">
+				<!-- <div class="thumbnail">  -->
+				<!-- 	<img src="images/service_01.png" alt="analytics-icon"> -->
+				<div class="glyphicon glyphicon-tint"></div>
 					<div class="caption">
-						<h3>Important Feature 1</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<h3>Account value</h3>
+						<h4>Currency<span><b> Thia Baht </b></span> </h4>
+						<h4><strong>Value: <span> 2000</span></strong></h4>
+						<h3>Units : <span> 1000 </span> </h3>
 					</div>
-				</div><! --/thumbnail -->
+				<!-- </div><!/thumbnail -->
 			</div><! --/col-sm-6-->
  
 			<div class="col-sm-6 col-md-3">
@@ -300,7 +363,21 @@
   {
     $('#membersincedate').text("Member since 13 November 2014");
     
-    });      
+    
+
+    $.getJSON("http://socialliquidity.azurewebsites.net/GetJoinDate?userId=1", function(data){
+    	var startDate = new Date();
+
+    	console.log(data);
+    	startDate = data;
+    	console.log(startDate);
+
+
+    });
+
+  }); 
+
+    
 
 </script>
  
