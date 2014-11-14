@@ -11,6 +11,11 @@
 
 @charset "utf-8";
 
+@font-face {
+     font-family: Vincent;
+     src: url('../fonts/Vincent-Regular.otf'); 
+}
+
 body{
 	font-family:'Open Sans',Arial,sans-serif;
 	background:#FFF;
@@ -117,10 +122,10 @@ a:hover,a:focus{color:#5173bd;}
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-attachment:fixed;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size:cover;
+	-webkit-background-size:100% auto;
+	-moz-background-size:100% auto;
+	-o-background-size:100% auto;
+	background-size:100% auto;
 	}
 
 .masthead .container{
@@ -215,16 +220,16 @@ to {
 	background-color: #58ACFA;
 	background-image:none;
 	border: 0;
-	-webkit-box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
-	box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
+	-webkit-box-shadow: 0 3px 0 rgba(88, 172, 251, 1);
+	box-shadow: 0 3px 0 rgba(88, 172, 251, 1);
 	line-height: 1.8;
 }
 .btn-blue:hover, .btn-success:focus, .btn-success:active {
 	background-color: #0080FF;
 	color:#FFF;
 	border: 0;
-	-webkit-box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
-	box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
+	-webkit-box-shadow: 0 3px 0 rgba(0, 122, 255, 1);
+	box-shadow: 0 3px 0 rgba(0, 122, 255, 1);
 }
 .btn-primary {
 	background-color: #2db6d8;
@@ -501,7 +506,66 @@ transform:scale(1.05);
 z-index:2;
 }
 
+/*========== 6. Splash How It Works==============*/
 
+.pricingsplash {
+	padding:25px;
+	color:#FFF;
+	text-align:center;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+.pricingsplash .plannamesplash {
+	text-transform:uppercase;
+	font-weight:600;
+}
+.pricingsplash .pricesplash {
+	font-size:52px;
+	font-weight:300;
+	margin:10px 0;
+}
+.pricingsplash .billingsplash {
+	text-transform:uppercase;
+	color:#FFF;
+	opacity:0.7;
+}
+.pricingsplash .pricesplash .currsplash {
+	display:inline-block;
+	font-size:20px;
+	vertical-align:super;
+}
+.pricingsplash .pricesplash .persplash {
+	display:inline-block;
+	font-size:20px;
+	vertical-align: baseline;
+}
+.color1 {
+	background-color:#2ecc71;
+}
+.color2 {
+	background-color:#1abc9c;
+}
+.color3 {
+	background-color:#16a085;
+}
+/* Animation */
+
+.pricingsplash {
+	-moz-transition:all 0.6s ease;
+	-webkit-transition:all 0.6s ease;
+	-ms-transition:all 0.6s ease;
+	-o-transition:all 0.6s ease;
+	transition:all 0.6s ease;
+}
+.pricingsplash:hover {
+	-moz-transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+	-o-transform:scale(1.05);
+	-ms-transform:scale(1.05);
+	transform:scale(1.05);
+	z-index:2;
+}
 /*========== 7. FAQ ==============*/
 
 .faq p {
@@ -618,6 +682,19 @@ float: left;
 border-color:2px solid red;
 }
 
+
 .logo:hover{
 	cursor: pointer;
 }
+
+h1.pageHeading
+{
+    	font-family:'Open Sans',Arial,sans-serif;
+}
+
+.transactionframe
+{
+height:500px;
+width:300px;
+}
+

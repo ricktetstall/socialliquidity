@@ -8,8 +8,10 @@
 	<title>Social Liquidity - be WONGA for Banks</title>
 	 
 	<link href="css/bootstrap.css" rel="stylesheet">
-	 
+    <link rel="stylesheet" href="css/jquery-ui.css" />
 	<link href="css/main.css" rel="stylesheet">
+	
+	
  
 	<!--[if lt IE 9]>
 	  <script src="js/html5shiv.js"></script>
@@ -77,10 +79,10 @@
 					<div class="col-md-4">
 					<div class="pricing color1">
 						<div class="planname"><span class="glyphicon glyphicon-tint"></span>Account Summary</div>
-						<div class="price"> <span class="curr">$</span>3800<span class="per"></span></div>
-						<div class="billing">Units: 500</div>
-						<div id= "buymore"> <a href="#">Buy more units<a></div>
-							<div id="sellunits"><a href="#">Sell units</a></div>
+						<div class="price"> <span class="curr">$</span><span id="balance"></span><span class="per"></span></div>
+						<div class="billing">Units: <span id="units"></span></div>
+						<div id= "buymore"> <a href="#" id="buylink">Buy more units<a></div>
+							<div id="sellunits"><a href="#" id="selllink">Sell units</a></div>
 					</div><! --/pricing -->
 				</div><! --/col-md-4-->
 
@@ -120,11 +122,19 @@
 
 
 	
- 
+<div id="buydialog">
+    <iframe id="buyiframe" src="" class="transactionframe"></iframe>
+</div>
+
+
+<div id="selldialog">
+    <iframe id="selliframe" src="" class="transactionframe"></iframe>
+</div>
  
  
  
 <script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/easing.js"></script>
 <script src="js/nicescroll.js"></script>
@@ -132,6 +142,17 @@
  
 <script>
 
+var unitCosts = {
+				gbp: 25,
+				usd: 40
+			};
+			
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
  $(function() {
     $('.scrollto, .gototop').bind('click',function(event){
@@ -143,23 +164,63 @@
       });
   });
   
+  function updateUnitsOwnedAndBalance(userid)
+  {
+    
+    $.getJSON("http://socialliquidity.azurewebsites.net/GetNumUnits?userId=" + userid, function(data){
+    
+    var unitsOwned = 500;
+    unitsOwned = data;
+
+    balance = unitCosts.usd*unitsOwned;
+    
+    $('#units').text(unitsOwned);
+    $('#balance').text(balance);
+    
+    });
+    
+  }
+  
   $(document).ready( function()
   {
+    userid = getParameterByName('userId');
+    
+    if (!userid)
+    {
+    	userid = 9;
+    }
+    
+    updateUnitsOwnedAndBalance(userid);
+    
     $('#membersincedate').text("Member since 10 August 2014");
     
-    
+    $("#buydialog").dialog({
+    autoOpen: false,
+    modal: true,
+    height: 600,
+    width: 400,
+    open: function(ev, ui){
+             $('#buyiframe').attr('src','buy_micro.html');
+          }
+  });
 
-    $.getJSON("http://socialliquidity.azurewebsites.net/GetJoinDate?userId=1", function(data){
-    	var startDate = new Date();
-    	var startDatestring;
+  $('#buylink').click(function(){
+      $('#buydialog').dialog('open');
+  });
+  
+      $("#selldialog").dialog({
+    autoOpen: false,
+    modal: true,
+    height: 600,
 
-    	console.log(data);
-    	// startDate = data;
-    	console.log(startDate);
-    	startDateString = startDate.toString();
-    	console.log(startDateString);
+    open: function(ev, ui){
+             $('#selliframe').attr('src','sell_micro.html');
+          }
+  });
 
-    });
+  $('#selllink').click(function(){
+      $('#selldialog').dialog('open');
+  });
 
   }); 
 </script>

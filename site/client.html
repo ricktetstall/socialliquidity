@@ -9,7 +9,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	 
 	<link href="css/main.css" rel="stylesheet">
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="css/jquery-ui.css" />
  
 	<!--[if lt IE 9]>
 	  <script src="js/html5shiv.js"></script>
@@ -26,6 +26,13 @@
     margin-left:auto; 
     margin-right:auto;
   }
+  
+  h4.navy {
+  	color:#0000bb;
+  	font-family:Vincent;
+  }
+  
+
 	</style>
 	
 </head>
@@ -55,15 +62,16 @@
     <! -- ******************** MASTHEAD SECTION ******************** -->	
 	<main id="top" class="masthead" role="main">
 		<div class="container">
-			<div class="logo"> <a href="index.html#"><img src="images/logo.png" alt="logo"></a>
-			</div>
+			<div class="logo"> 
+				<h1 class="pageHeading"><span class="glyphicon glyphicon-tint"></span> Social Liquidity</h1>
+		    </div>
 			
 			<form action="borrow.html">
 			
 			<table class='center'>
 			<tr>
 			<td>
-			<h4>How much capital<br/>do you want?</h1>
+			<h4 class="navy">How much capital<br/>do you want?</h1>
 			</td>
 			<td>
 				<div id="value" style="width:400px; margin:15px;"></div>
@@ -74,7 +82,7 @@
 			</tr>
 			<tr>
 			<td>
-			<h4>How long do you<br/>want it for?</h1>
+			<h4 class="navy">How long do you<br/>want it for?</h1>
 			</td>
 			<td>
 				<div id="duration" style="width:400px; margin:15px;"></div>
@@ -115,7 +123,7 @@
 <script src="js/easing.js"></script>
 <script src="js/nicescroll.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
  
  
 <script>
