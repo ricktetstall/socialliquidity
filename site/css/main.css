@@ -627,3 +627,9 @@ h1.pageHeading
 {
     	font-family:'Open Sans',Arial,sans-serif;
 }
+
+.transactionframe
+{
+height:500px;
+width:300px;
+}
