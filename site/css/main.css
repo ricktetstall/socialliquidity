@@ -122,10 +122,10 @@ a:hover,a:focus{color:#5173bd;}
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-attachment:fixed;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size:cover;
+	-webkit-background-size:100% auto;
+	-moz-background-size:100% auto;
+	-o-background-size:100% auto;
+	background-size:100% auto;
 	}
 
 .masthead .container{
@@ -220,16 +220,16 @@ to {
 	background-color: #58ACFA;
 	background-image:none;
 	border: 0;
-	-webkit-box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
-	box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
+	-webkit-box-shadow: 0 3px 0 rgba(88, 172, 251, 1);
+	box-shadow: 0 3px 0 rgba(88, 172, 251, 1);
 	line-height: 1.8;
 }
 .btn-blue:hover, .btn-success:focus, .btn-success:active {
 	background-color: #0080FF;
 	color:#FFF;
 	border: 0;
-	-webkit-box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
-	box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
+	-webkit-box-shadow: 0 3px 0 rgba(0, 122, 255, 1);
+	box-shadow: 0 3px 0 rgba(0, 122, 255, 1);
 }
 .btn-primary {
 	background-color: #2db6d8;
@@ -623,3 +623,7 @@ float: left;
 border-color:2px solid red;
 }
 
+h1.pageHeading
+{
+    	font-family:'Open Sans',Arial,sans-serif;
+}
