@@ -617,3 +617,7 @@ padding-left: 10em;
 float: left;
 border-color:2px solid red;
 }
+
+.logo:hover{
+	cursor: pointer;
+}
