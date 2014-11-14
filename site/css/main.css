@@ -682,6 +682,11 @@ float: left;
 border-color:2px solid red;
 }
 
+
+.logo:hover{
+	cursor: pointer;
+}
+
 h1.pageHeading
 {
     	font-family:'Open Sans',Arial,sans-serif;

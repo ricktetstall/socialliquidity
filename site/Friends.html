@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<title>Social Liquidity</title>
+	 
+	<link href="css/bootstrap.css" rel="stylesheet">
+	 
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/jquery-ui.css" rel="stylesheet">
+		<link href="css/simply-toast.min.css" rel="stylesheet">
+ 
+	<!--[if lt IE 9]>
+	  <script src="js/html5shiv.js"></script>
+	  <script src="js/respond.min.js"></script>
+	<![endif]-->
+ 
+	<link rel="shortcut icon" href="images/favicon.png">
+	<script src="js/pace.js"></script>
+ 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="preloader"></div>
+	
+
+ 
+
+	    <! -- ******************** CLIENTS SECTION ******************** -->	 
+		<div class="section-title">
+			<h2>Invite your friends</h2>
+			<h4>Build the circle of trust and get your friends benefits..</h4>
+		</div>
+	
+		<section class="row clientlogo breath">
+			<div class="col-md-12 text-center"> 
+		
+				<img class="logo" src="images/facebook.png" alt="facebook" id="Facebook">
+		
+		
+				<img class="logo" src="images/twitter.jpeg" alt="twitter" id="Twitter">
+			
+		
+				<img class="logo" src="images/meetup_icon.jpeg" alt="meetup" id="Meetup">
+		
+			
+				<img class="logo" src="images/ning_icon.jpeg" alt="ning" id="Ning">
+			
+			
+				<img class="logo" src="images/linkedin_icon.png" alt="linkedin" id="LinkedIn">
+		
+			</div>
+
+		</section><! --/section -->
+ 
+	</div><! --/container -->
+ 
+
+	  
+
+ <div id="dialog-form" title="Invite your friends">
+<!--   <p class="validateTips">All form fie</p> -->
+ 
+  <form>
+    <fieldset>
+      <label id="media_form_label" for="name"></label>
+      <input type="text" name="name" id="name" placeholder="Jane Smith" class="text ui-widget-content ui-corner-all">
+    
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+ 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/nicescroll.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/simply-toast.min.js"></script>
+
+ 
+ 
+<script>
+
+
+ $(function() {
+ 	var dialog, mediaCompany;
+    $('.scrollto, .gototop').bind('click',function(event){
+		 var $anchor = $(this);
+		 $('html, body').stop().animate({
+         scrollTop: $($anchor.attr('href')).offset().top
+          }, 1500,'easeInOutExpo');
+     event.preventDefault();
+      });
+
+  var sendInvite= function(){
+
+ 			$.simplyToast('Invite sent to your friends on 	' + mediaCompany + ' Boom!', 'success');
+    	dialog.dialog("close");
+    	}
+   		
+   	dialog = $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 300,
+      width: 350,
+      modal: true,
+      buttons: {
+        "Send Invite": sendInvite,
+        Cancel: function() {
+          dialog.dialog( "close" );
+        }
+      },
+      close: function() {
+        // form[ 0 ].reset();
+       
+      }
+    });
+
+
+		$('.logo').on('click', function(e){
+			$this = $(this);
+			// var mediaCompany;
+
+
+			mediaCompany = $this.attr("id");
+			console.log(mediaCompany);
+
+			mediaMessage = "Enter your " + mediaCompany + " username:"
+
+			$('#media_form_label').text(mediaMessage);
+			console.log($( "#dialog-form" ));
+
+
+
+			dialog.dialog("open");
+	
+  
+		});
+
+ });
+			                           
+
+
+
+
+        
+
+</script>
+ 
+</body>
+</html>
