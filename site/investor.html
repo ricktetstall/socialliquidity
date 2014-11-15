@@ -126,7 +126,7 @@
  	
 			<div class="section-title">
 				<h2><span class="glyphicon glyphicon-tint"></span>Lending Distribution</h2>
-					<h3>Total Lent: $1 100 000 000 ! <span><a id="backtoinvestor" href="investor.html"> Back to Account overview </a></span></h3>
+					<h3>Total Lent: $1 100 000 000 ! <span><a id="backtoinvestor" href="investor.html?userid=9"> Back to Account overview </a></span></h3>
 			</div>
 
 	<canvas id="myChart" width="400" height="400"></canvas>
@@ -135,7 +135,7 @@
 
 	    <! -- ******************** FOOTER ******************** -->	  
  
-		<div class="container">
+		<div class="container" id="footer">
 			<section class="row breath">
 				<div class="col-md-12 footerlinks">
 					<p>&copy; 2014 Social Liquidity. All Rights Reserved</p>
@@ -247,7 +247,7 @@ function getParameterByName(name) {
 	close: function(ev, ui){
         updateUnitsOwnedAndBalance(userid);
         transactionvalue = $('#selliframe').contents().find("#unitsSold").text() * unitCosts.usd;
-        newrow = '<div class="price" class="newrow"><span class="date"> 14 Nov 2014 <span id="transtype"> Payment </span><span class="curr">$</span>' + transactionvalue + '</div>';
+        newrow = '<div class="price" class="newrow"><span class="date"> 14 Nov 2014 <span id="transtype"> Withdrawl </span><span class="curr">$</span>' + transactionvalue + '</div>';
         $('.transactions').after(newrow);
           }
   });
@@ -258,6 +258,7 @@ function getParameterByName(name) {
 
   $('#lent').on('click', function(){
   	$('#accountoverview').fadeOut();
+  	$('#footer').fadeOut();  	
   	showChart();
   });
 
@@ -271,19 +272,19 @@ function getParameterByName(name) {
         value: 30,
         color:"#F7464A",
         highlight: "#FF5A5E",
-        label: "RBS"
+        label: "Pension Funds (%)"
     },
     {
         value: 50,
         color: "#46BFBD",
         highlight: "#5AD3D1",
-        label: "NatWest"
+        label: "Building Societies (%)"
     },
     {
         value: 20,
         color: "#FDB45C",
         highlight: "#FFC870",
-        label: "Bank of England"
+        label: "Retail Banks (%)"
     }
 ]
 var ctx = document.getElementById("myChart").getContext("2d");
